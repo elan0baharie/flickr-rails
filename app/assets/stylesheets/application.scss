@@ -1,2 +1,40 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
+
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+.locked {
+  position: fixed;
+  background-image: url('gallery.jpg');
+  min-height: 1200px;
+  min-width: 1200px;
+  background-size: contain;
+}
+
+.front-button {
+  background-color: lightgray;
+  opacity: .9;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  margin-top: 30%;
+  border: 1px solid white;
+  color: white;
+}
+
+.panel {
+  border: .5px solid gray;
+  width: 40%;
+}

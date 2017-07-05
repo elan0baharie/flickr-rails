@@ -1,0 +1,13 @@
+<%= form_for [current_user, @photo] do |f| %>
+  <div class="form-group">
+    <%= f.label :caption %>
+    <%= f.text_field :caption %>
+  </div>
+  <div class="form-group">
+    <%= f.label :file, class: 'control-label' %>
+    <div >
+        <%= f.file_field :file %>
+    </div>
+  </div>
+  <p><%= f.submit %></p>
+<% end %>

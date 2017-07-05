@@ -1,0 +1,14 @@
+<% if current_user %>
+  <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+  <li><%= link_to 'Add Photo', new_user_photo_path(current_user) %></li>
+  <% if current_user.photos.any? %>
+    <ul>
+      <% current_user.photos.each do |pic| %>
+      <li><%= image_tag(pic.file) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h3>You have not uploaded any photos yet.</h3>
+  <% end %>
+
+<% end %>
