@@ -1,24 +1,37 @@
-# README
+# _Flickrish_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _Mock Social Photo Sharing Website, 7.5.2017_
 
-Things you may want to cover:
+#### By _**Starlynne Start and Elan Baharie**_
 
-* Ruby version
+## Description
 
-* System dependencies
+_This page is designed as a clone of a popular photo sharing site where users can add/share photos and rate/review other's submissions. Assignment goals were to implement user authentication, file storage with ActiveRecord and Paperclip, and to allow CRUD functionality to authorized users. Epicodus project in Rails Authentication._
 
-* Configuration
+## Setup/Installation Requirements
+_You will need Ruby/Rails and postgres to run this app locally._
 
-* Database creation
+* _Clone this repository_
+* _Run command 'bundle install'_
+* _Use command t to open a second terminal window, in that window run the command 'psql'_
+* _Back in the original window, run command 'rake db:create db:migrate'_
+* _Run command 'rails serve'_
+* _Open your web browser and type in 'localhost:3200'_
 
-* Database initialization
+## Known Bugs
 
-* How to run the test suite
+_None_
 
-* Services (job queues, cache servers, search engines, etc.)
+## Support and contact details
 
-* Deployment instructions
+_Comment, concerns or suggestions welcome! lewis.start0905@gmail.com_
 
-* ...
+## Technologies Used
+
+_HTML/CSS, Bootstrap, Ruby/Rails, ActiveRecord, Paperclip, Devise_
+
+### License
+
+*MIT*
+
+Copyright (c) 2017 **_S.Start and E.Baharie_**
