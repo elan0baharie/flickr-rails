@@ -3,6 +3,12 @@ class PhotosController < ApplicationController
   def index
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @photo = Photo.find(params[:id])
+    
+  end
+
   def new
     @photo = current_user.photos.new
   end
