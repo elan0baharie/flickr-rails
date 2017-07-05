@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  belongs_to :photos
+  has_and_belongs_to_many(:photos)
 end

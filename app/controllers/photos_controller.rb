@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
-    
+
   end
 
   def new
@@ -22,10 +22,16 @@ class PhotosController < ApplicationController
       render :new
     end
   end
-
+  def destroy
+    @user = User.find(params[:user_id])
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to user_path
+  end
 
   private
   def photo_params
     params.require(:photo).permit(:caption, :user_id, :file, :file_file_name, :file_content_type, :file_file_size, :file_updated_at)
   end
+
 end
