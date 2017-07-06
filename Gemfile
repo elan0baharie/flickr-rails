@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rb-readline'
 gem 'faker'
 gem 'jquery-rails'
 gem 'devise'

@@ -4,6 +4,7 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @tags = Tag.all
     @tag = Tag.new
     @users = User.all
     @user = User.find(params[:user_id])

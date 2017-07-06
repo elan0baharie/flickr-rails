@@ -23,4 +23,11 @@ class TagsController < ApplicationController
     redirect_to user_photo_path(current_user, @photo)
   end
 
+  def edit
+    @tag = Tag.find(params[:id])
+    @photo = Photo.find(params[:photo_id])
+    @photo.tags.delete(@tag)
+    redirect_to user_photo_path(current_user, @photo)
+  end
+
 end
