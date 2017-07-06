@@ -1,0 +1,7 @@
+<h2>Edit</h2>
+
+<%= form_for [@user, @photo] do |f| %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <%= f.submit %>
+  <% end %>

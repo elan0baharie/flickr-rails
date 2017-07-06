@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root 'splashes#index'
 
   resources :users do
-    resources :photos do
-      resources :tags
-    end
+    resources :photos
   end
-  
+  resources :tags 
+
 end

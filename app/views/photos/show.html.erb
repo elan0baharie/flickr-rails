@@ -2,10 +2,32 @@
 <div class="">
   <%= image_tag(@photo.file) %>
   <% if current_user == @user %>
-  <%= link_to "Edit", edit_user_photo_path(@user, @photo)%>
-  <%= link_to "Destroy", user_photo_path(@user, @photo),
+    <%= link_to "Edit", edit_user_photo_path(@user, @photo)%>
+    <%= link_to "Destroy", user_photo_path(@user, @photo),
                                 :data => {:confirm => "Are you sure?",
                                   :method => "delete"}%>
-    
+    <div class="">
+      <h4>Add tags</h4>
+      <%= form_for @tag do |f| %>
+      <%= f.hidden_field :photo_id, :value => @photo.id %>
+        <%= f.select(:text) do %>
+          <% @users.each do |user| -%>
+          <%= content_tag(:option, user.username, value: user.username) %>
+          <% end %>
+        <% end %>
+        <br>
+        <br>
+        <%= f.submit 'Submit', :class => "form-button" %>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+
+  <% if @photo.tags.any? %>
+  <ul>
+    <% @photo.tags.each do |tag| %>
+    <li><%=link_to tag.text, tag_path(tag) %></li>
+    <% end %>
+  </ul>
   <% end %>
 </div>

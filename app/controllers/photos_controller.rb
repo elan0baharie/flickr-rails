@@ -4,9 +4,10 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @tag = Tag.new
+    @users = User.all
     @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
-
   end
 
   def new
@@ -22,11 +23,27 @@ class PhotosController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @user = User.find(params[:user_id])
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @photo = Photo.find(params[:id])
+    if @photo.update(photo_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @user = User.find(params[:user_id])
     @photo = Photo.find(params[:id])
     @photo.destroy
-    redirect_to user_path
+    redirect_to user_path(@user)
   end
 
   private
