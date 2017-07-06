@@ -15,7 +15,7 @@
         <div class="panel-footer">
           <p><%= pic.caption %></p>
           <hr>
-          <p>Eventual stats</p>
+          <p>Favorites: <%= pic.favorites.length %> </p>
         </div>
       </div>
 
@@ -27,7 +27,18 @@
     <h3>You have not uploaded any photos yet.</h3>
 
   <% end %>
-
+<div class="">
+  <% if current_user.favorites.any? %>
+  <h3>Your Favorites:</h3>
+  <ul>
+    <% current_user.favorites.each do |fav| %>
+      <% fav.photos.each do |pic| %>
+    <li><%=link_to pic.caption, user_photo_path(pic.user.id, pic) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
 <% else %>
 
 

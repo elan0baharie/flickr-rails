@@ -25,7 +25,12 @@
         <div class="panel-footer">
           <p><%= pic.caption %></p>
           <hr>
-          <p>Eventual stats</p>
+          <p>Favorites: <%= pic.favorites.length %> </p>
+          <%= form_for @favorite do |f| %>
+          <%= f.hidden_field :photo_id, :value => pic.id %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.submit 'Favorite', :class => "form-button" %>
+          <% end %>
         </div>
       </div>
 
